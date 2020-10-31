@@ -21,7 +21,7 @@ module Enumerize
           require 'enumerize/hooks/uniqueness'
 
           unless options[:multiple]
-            decorate_attribute_type(name, :enumerize) do |subtype|
+            decorate_attribute_type(name.to_s) do |subtype|
               Type.new(enumerized_attributes[name], subtype)
             end
           end
